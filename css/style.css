@@ -1,0 +1,410 @@
+@font-face{
+    font-family: 'roboto_medium_regular';
+    src: url('../webfonts/roboto-medium-webfont.woff2') format('woff2'),
+         url('../webfonts/roboto-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face{
+    font-family: 'roboto_condensed_light';
+    src: url('../webfonts/robotocondensed-light-webfont.woff2') format('woff2'),
+         url('../webfonts/robotocondensed-light-webfont.woff') format('woff'),
+         url('../webfonts/robotocondensed-light-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'roboto_condensed_regular';
+    src: url('../webfonts/robotocondensed-regular-webfont.woff2') format('woff2'),
+         url('../webfonts/robotocondensed-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face{
+	font-family: 'poppinsregular';
+	src: url('../webfonts/popins/poppins-regular-webfont.eot');
+	src: url('../webfonts/popins/poppins-regular-webfont.woff2') format('woff2'),
+		 url('../webfonts/popins/poppins-regular-webfont.woff') format('woff'),
+		 url('../webfonts/popins/poppins-regular-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+:root{
+	--color-one: #F5F5F5;
+	--color-two: #24292E;
+	--color-three: #EC5252;
+
+	--form-color: #14111A;
+
+	--accent-color: #253556;
+	--border-color: #D8D8D8;
+	
+	--header-height: 60px;
+}
+
+body,html{
+	font-family: 'roboto_condensed_light';
+	width: 100%;
+	height: 100%;
+	background-color: #FFF;
+	color: var(--bs-black);
+	font-size: 16px;
+}
+
+.full-box{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+.div-bordered{
+	border: 1px solid #E1E1E1;
+}
+/*----------  Text Styles  ----------*/
+.roboto-medium{
+	font-family: 'roboto_medium_regular';
+}
+.roboto-condensed-light{
+	font-family: 'roboto_condensed_light';
+}
+.roboto-condensed-regular{
+	font-family: 'roboto_condensed_regular';
+}
+.poppins-regular{
+	font-family: 'poppinsregular';
+}
+
+/*=========== barra de navegación (web) ===========*/
+.header,
+.header-brand,
+.header-options,
+.header-navbar,
+.header-button{
+	height: var(--header-height);
+	transition: all .3s ease-in-out;
+	box-sizing: border-box;
+}
+.header{
+	background-color: #FFF;
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
+	position: relative;
+	color: var(--bs-black);
+}
+.header-brand,
+.header-options{
+	position: absolute;
+	top: 0;
+}
+.header-brand{
+	width: 25%;
+	left: 0;
+}
+.header-brand img{
+	margin-top: 4px;
+	max-width: calc(var(--header-height) - 8px);
+}
+.header-options{
+	width: 75%;
+	right: 0;
+	padding-right: 20px;
+	text-align: right;
+}
+.header-navbar{
+	display: inline-block;
+	width: auto;
+	padding-top: 0;
+	margin-top: 0;
+}
+.header-navbar ul,
+.header-navbar ul li,
+.header-navbar ul li a{
+	width: auto;
+	padding-top: 0;
+	margin-top: 0;
+}
+.header-navbar ul li,
+.header-navbar ul li a,
+.header-button,
+.header-button > i{
+	display: inline-block;
+	height: var(--header-height);
+	line-height: var(--header-height);
+	transition: all .3s ease-in-out;
+	position: relative;
+}
+.header-button > i{
+	cursor: pointer;
+	width: 100%;
+}
+.header-navbar ul li a{
+	padding: 0 15px;
+}
+.header-navbar ul li a:hover,
+.header-button:hover{
+	text-decoration: none;
+	color: #F93154;
+}
+.header-navbar ul li a span{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background-color: transparent;
+	height: 5px;
+	transition: all .3s ease-in-out;
+}
+.header-navbar ul li a:hover span{
+	background-color: #F93154;
+}
+.header-button{
+	width: calc(var(--header-height) - calc(var(--header-height) / 4));
+}
+.header-navbar ul li a,
+.header-button{
+	font-size: calc(var(--header-height) / 3.5);
+	color: var(--bs-black);
+}
+.btn-login-menu{
+	user-select: none;
+}
+.popup-login{
+	position: absolute;
+	width: 275px;
+	height: auto;
+	top: calc(var(--header-height) + 8px);
+	right: 0;
+	background-color: #fff;
+	color: var(--bs-black);
+	z-index: 99999;
+	padding: 15px 7px;
+	transition: all .3s ease-in-out;
+	opacity: 0;
+	pointer-events: none;
+}
+.popup-login:hover{
+	color: var(--bs-black);
+}
+.popup-login::after,
+.popup-login::before{
+	bottom: 100%;
+	right: 12px;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.popup-login::after{
+	border-color: rgba(136, 183, 213, 0);
+	border-bottom-color: #fff;
+	border-width: 8px;
+	margin-right: 0px;
+}
+.popup-login::before{
+	border-color: rgba(194, 225, 245, 0);
+	border-bottom-color: #ccc;
+	border-width: 9px;
+	margin-right: -1px;
+}
+.popup-login.active{
+	opacity: 1;
+	pointer-events: inherit;
+}
+.bag-count{
+	position: absolute;
+	top: calc(var(--header-height) - (var(--header-height) / 1.2));
+	right: 0;
+}
+
+/*Estilos del banner*/
+.banner{
+	height: calc(100vh - var(--header-height));	
+	position: relative;
+	background-position: center;
+	background-image: url('../assets/img/banner_1.jpg');
+	background-size: cover;
+	animation: banner 15s infinite linear;
+}
+.banner-body{
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100%;
+	color: #FFF;
+	font-family: 'poppinsregular';
+	text-align: center;
+}
+.banner::before{
+	content    : "";
+	background : #000000; 
+	position   : absolute;
+	width      : 100%;
+	height     : 100%;
+	opacity    : 0.4; 
+}
+@keyframes banner{
+	0%{
+		background-image: url('../assets/img/banner_1.jpg');
+	}
+	33%{
+		background-image: url('../assets/img/banner_1.jpg');
+	}
+
+
+	34%{
+		background-image: url('../assets/img/banner_2.jpg');
+	}
+	66%{
+		background-image: url('../assets/img/banner_2.jpg');
+	}
+
+
+	67%{
+		background-image: url('../assets/img/banner_3.jpg');
+	}
+	100%{
+		background-image: url('../assets/img/banner_3.jpg');
+	}
+
+}
+
+/* Footer */
+.footer{
+	border-top: 1px solid #E1E1E1;
+	padding: 70px 0 40px 0;
+	font-family: 'poppinsregular', sans-serif;
+	background-color: rgb(251, 251, 251);
+	color: var(--accent-color);
+}
+.footer-link{
+	text-decoration: none !important;
+	color: var(--accent-color);
+} 
+.footer-link:hover{
+	color: var(--accent-color);
+}
+
+/* estilos de contenedores web */
+.container-web-page{
+	padding-top: 50px;
+	padding-bottom: 30px;
+}
+
+
+/* estilos cards*/
+.container-cards{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.container-cards .card{
+	width: 300px;
+	min-width: 300px;
+	margin: 10px 15px;
+}
+.container-cards .card:hover{
+	text-decoration: none;
+}
+.container-cards .card .card-img-top{
+	height: 300px;
+}
+
+/* estilos carrito de compras */
+.container-cart{
+	min-height: calc(100vh - var(--header-height));
+	padding-bottom: 30px;
+}
+.bag-item > figure,
+.bag-item > div{
+	display: inline-block;
+}
+
+.bag-item > figure{
+	width: 90px;
+	height: 90px;
+}
+.bag-item > div{
+	width: calc(100% - 94px);
+}
+.bag-details .list-group-item{
+	border-color:transparent;
+	color: var(--accent-color);
+}
+
+/* estilos detalles de platillo */
+.galery-details figure{
+	width: 100px;
+	height: 100px;
+	margin: 15px;
+	display: inline-block;
+}
+.galery-details figure a,
+.galery-details figure img{
+	width: 100%;
+	height: 100%;
+}
+
+
+@media (max-width: 576px){
+	:root{
+		--header-height: 50px;
+	}
+	.header-brand{
+		display: none;
+	}
+	.header-options{
+		width: 100%;
+		padding-right: 0;
+		text-align: center;
+	}
+	.header-navbar ul li a,
+	.header-button{
+		font-size: calc(var(--header-height) / 2.5);
+	}
+	.header-button{
+		width: var(--header-height);
+	}
+	.container-cards{
+		flex-direction: column;
+		align-items: center;
+	}
+	.container-cards .card{
+		width: 100%;
+		max-width: 300px;
+	}
+	.container-web-page{
+		padding-top: 35px
+	}
+}
+
+@media (max-width: 767px){
+	.bag-item > figure,
+	.bag-item > div{
+		display: block;
+	}
+	.bag-item > figure{
+		width: 80%;
+		height: auto;
+		margin: 0 auto;
+		margin-bottom: 20px;
+	}
+	.bag-item > div{
+		width: 100%;
+	}
+}
+
+@media (max-width: 980px){
+	.tittle-details{
+		padding-top: 50px;
+	}
+}
