@@ -67,6 +67,10 @@ body,html{
 .div-bordered{
 	border: 1px solid #E1E1E1;
 }
+
+.bg-white{
+	background-color: #FFF;
+}
 /*----------  Text Styles  ----------*/
 .roboto-medium{
 	font-family: 'roboto_medium_regular';
@@ -307,16 +311,48 @@ body,html{
 	flex-wrap: wrap;
 	justify-content: center;
 }
-.container-cards .card{
+.card-product{
 	width: 300px;
-	min-width: 300px;
-	margin: 10px 15px;
+	height: auto;
+	margin: 15px;
+	position: relative;
+	border-radius: 10px;
+	color: var(--accent-color);
 }
-.container-cards .card:hover{
-	text-decoration: none;
+.card-product-img,
+.card-product-body{
+	position: relative;
+	width: 298px;
 }
-.container-cards .card .card-img-top{
+.card-product-img{
 	height: 300px;
+	overflow: hidden;
+	border-radius: 10px 10px 0 0;
+	margin: 0;
+	padding: 0;
+}
+.card-product-img img{
+	width: 100%;
+	height: calc(100% - 1px);
+}
+.card-product-body{
+	border-radius: 0 0 10px 10px;
+	height: 250px;
+}
+.card-product-price{
+	font-size: 35px;
+	color: #3273dc;
+}
+.card-product-content{
+	height: 200px;
+	padding: 20px 10px 0 10px;
+	overflow: hidden;
+}
+.card-product-content:hover{
+	overflow: auto;
+}
+.card-product-options{
+	height: 50px;
 }
 
 /* estilos carrito de compras */
@@ -378,10 +414,6 @@ body,html{
 		flex-direction: column;
 		align-items: center;
 	}
-	.container-cards .card{
-		width: 100%;
-		max-width: 300px;
-	}
 	.container-web-page{
 		padding-top: 35px
 	}
@@ -400,6 +432,29 @@ body,html{
 	}
 	.bag-item > div{
 		width: 100%;
+	}
+}
+
+@media (min-width: 1410px){
+	.card-product{
+		width: 575px;
+		height: 250px;
+	}
+	.card-product-img,
+	.card-product-body{
+		position: absolute;
+		top: 0;
+	}
+	.card-product-img{
+		width: 240px;
+		height: 250px;
+		left: 0;
+		border-radius: 10px 0 0 10px;
+	}
+	.card-product-body{
+		width: 333px;
+		border-radius: 0 10px 10px 0;
+		right: 0;
 	}
 }
 
